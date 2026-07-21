@@ -76,6 +76,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 - Create React App
 - Configured tailwindcss into the app
+- Header
+- Login Form
+- Signup Form
+
 
 
 
