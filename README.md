@@ -77,8 +77,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Create React App
 - Configured tailwindcss into the app
 - Header
+- Routing
 - Login Form
 - Signup Form
+- Form validation
+- useRef Hook - so instead of using useState for storing the field values we will use "useRef"
+- Firebase setup
+- Create Sign Up /Sign Inauthentication - https://firebase.google.com/docs/auth/web/password-auth
+- Now we will be using Libraries "React Toolkit" and "React Redux"  npm i @reduxjs/toolkit  && npm i react-redux
+  OR
+  npm install @reduxjs/toolkit react-redux
+  (So that we will store data for current user in our redux store)
+- Created redux store with user slice
+- Event listner from firebase to detect user sign-in/sign-out - https://firebase.google.com/docs/auth/web/manage-users - (We implemented it in App.js)
+- We have used functions for "signup/signin", "On Authstate changed"(In App.js root) and "signout" from firebase.
+- update profile later
+- So signup/sigin/logout is done.
 
 
 
