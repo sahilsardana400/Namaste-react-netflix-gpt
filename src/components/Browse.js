@@ -16,8 +16,6 @@ const Browse = () => {
       - BrowseSecondSection
         - Moview List * n
           - movie cards * n  */}
-
-
         <BrowseTopSection />
         <BrowseSecondSection />
 
