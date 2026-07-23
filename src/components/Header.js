@@ -4,9 +4,41 @@ import { auth } from '../utils/firebase';
 import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { addUser,removeUser } from '../utils/userSlice';
+import { useDispatch } from 'react-redux';
 
 const Header = () => {
+
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  //this will only load at once only when component renders not again and again
+  useEffect(() => {
+    
+    const unsubscribeMe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/auth.user
+        //const uid = user.uid;
+        const {uid,email,displayName} = user;
+        dispatch(addUser( {
+          uid:uid,email:email,displayName:displayName
+        } ));//use distach to action from userslice
+        navigate('/browse');
+      } else {
+        // User is signed out
+        dispatch(removeUser());
+        navigate('/');
+      }
+    });
+
+    //onAuthStateChanged returns a function that we can listen for to stop listening event , so we can use it when component is unmounted
+    return () => unsubscribeMe();//this is called when component is unmounted
+
+  },[]);
+
   const signOutHandle = () => {
       signOut(auth).then(() => {
         navigate('/');

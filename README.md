@@ -93,6 +93,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - We have used functions for "signup/signin", "On Authstate changed"(In App.js root) and "signout" from firebase.
 - update profile later
 - So signup/sigin/logout is done.
+- BugFix: Move onAuthState Change from app.js to header && that will fix the bug if non logged in user tried to access browse page.
+- Unsubscribe/Stop listening-- OnAuthaChanged when header component unmounts
+- TMDB APIS- https://www.themoviedb.org/settings/api ---- Movies List
+- Get DATA FROM "nowplaying" api on browse page
+- Store NowPlaying Api data in movieSlice (redux store)
+- Planning to show BrowseTop section with nested 2 compnenets - video & Title
+- Custom hook to fetch trailor video using videos api by using movie Id & updated store
+- Embed Video with trailor video
+
+
 
 
 
