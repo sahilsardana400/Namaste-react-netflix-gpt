@@ -101,6 +101,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Planning to show BrowseTop section with nested 2 compnenets - video & Title
 - Custom hook to fetch trailor video using videos api by using movie Id & updated store
 - Embed Video with trailor video
+- Added Movies List with differnt apis and by use of redux store by custom hooks for popular,nowPlaing video
 
 
 

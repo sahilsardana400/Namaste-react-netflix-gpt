@@ -18,7 +18,7 @@ const VideoBackground = (props) => {
     return (trailorVideo && <div className="w-full overflow-hidden">
         <iframe
             className="w-full aspect-video"
-            src={`https://www.youtube.com/embed/${trailorVideo.key}?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1`}
+            src={`https://www.youtube.com/embed/${trailorVideo.key}?autoplay=1&mute=1&controls=0&rel=0&modestbranding=0&playsinline=1&loop=1`}
             title="Movie Trailer"
             allow="autoplay; encrypted-media"
             allowFullScreen
