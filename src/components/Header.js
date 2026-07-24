@@ -8,6 +8,9 @@ import { useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { addUser,removeUser } from '../utils/userSlice';
 import { useDispatch } from 'react-redux';
+import { updateGptToogle } from '../utils/gptSlice';
+import { updateLanguage } from '../utils/langSlice';
+import { supportedLanguages } from '../utils/langConstants';
 
 const Header = () => {
 
@@ -48,14 +51,36 @@ const Header = () => {
   };
 
   const user = useSelector((store) => store.user);
+  const toggleSwitchValue = useSelector((store) => store.gpt.toogleswitch);
+  const currentLang = useSelector((store) => store.lang.currentLang);
+
 
   return (
     <div className="absolute z-10 w-full px-8 py-5 bg-gradient-to-b from-black flex justify-between items-center">
-      
-      <img src={logo} className="w-40" alt="logo" />
 
-
+    <img src={logo} className="w-40" alt="logo" />
+    
     { user && <div className="flex items-center gap-4">
+
+
+      { (toggleSwitchValue && supportedLanguages.length) && 
+      
+        <select value={currentLang} onChange={(e) => {
+          dispatch(updateLanguage(e.target.value))
+        }} className="p-3 rounded-lg bg-black text-white pr-1">
+          {
+            supportedLanguages.map((item,index) => {
+              return <option value={item.language_code} key={index}>{item.language_name}</option> 
+            })
+          }
+        </select>
+      }
+
+
+      <button className="bg-white text-black rounded-lg p-3" onClick={() => {
+        dispatch(updateGptToogle(!toggleSwitchValue));
+       }}>GptSearch: {toggleSwitchValue?'ON':'OFF'}</button>
+
         <img 
           className="w-12 h-12 rounded-full" 
           alt="user Icon" 

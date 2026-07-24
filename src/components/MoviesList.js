@@ -38,7 +38,7 @@ const MoviesList = ({ title, movies }) => {
           ref={scrollRef}
           className="flex gap-4 overflow-x-auto scroll-smooth hide-scrollbar"
         >
-        <div class="flex">
+        <div className="flex">
           {movies?.map((movie) => (
             <MovieCard
               key={movie.id}

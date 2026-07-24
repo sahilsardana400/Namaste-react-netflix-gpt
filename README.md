@@ -102,7 +102,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Custom hook to fetch trailor video using videos api by using movie Id & updated store
 - Embed Video with trailor video
 - Added Movies List with differnt apis and by use of redux store by custom hooks for popular,nowPlaing video
-
+- Added left,right icons along with the movies list
+- Gpt movie search feature:
+- Added gpt search button in header and added gpt slice in utils
+- Handle click gpt search so we will show either gpt search or the videos.
+- <> </> is called a React Fragment. It lets you group multiple JSX elements without adding an extra HTML element (like a <div>) to the DOM.
+- Created toogle switch
+- Created Gpy search components and its nested componets like GptSearchBar, GptMoviesSuggestions
+- Make Gpt search Bar multilingual
+- 
 
 
 
