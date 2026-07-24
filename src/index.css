@@ -10,6 +10,7 @@
 /* Firefox */
 .hide-scrollbar {
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 /* IE and old Edge */
